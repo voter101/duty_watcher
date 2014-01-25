@@ -9,7 +9,7 @@ class MainHandler(tornado.web.RequestHandler):
     def get(self):
         dutyMap = getDutyMap()
         items = dutyMap
-        self.render('template.html', title='Który frajer sprząta w tym tygodniu?', items=items)
+        self.render('template.html', title='Who cleans the house this week', items=items)
 
     
 class NextSuckerHandler(tornado.web.RequestHandler):
