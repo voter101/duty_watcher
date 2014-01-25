@@ -8,7 +8,10 @@
   <body> 
     <section id="duties">
       {% for item in items %}
-        {{ escape(str(items[item])) }}<br />
+      <div class="duty">
+        <span class="place">{{ item }}</span> 
+        <span class="name">{{ escape(str(items[item][0])) }}</span>
+      </div>
       {% end %}
     </section>
   </body>
