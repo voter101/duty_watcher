@@ -4,15 +4,19 @@
     <meta charset="utf-8" />
     <title>{{ title }}</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
   </head>
   <body> 
-    <section id="duties">
-      {% for item in items %}
-      <div class="duty">
-        <span class="place">{{ item }}</span> 
-        <span class="name">{{ escape(str(items[item][0])) }}</span>
-      </div>
-      {% end %}
-    </section>
+    <div id="wrapper">
+      <section id="duties">
+        {% for item in items %}
+        <div class="duty">
+          <span class="place">{{ item.title() }}</span> 
+          <span class="name">{{ escape(str(items[item][0])) }}</span>
+          <a href="{{ '/nextSucker/' + item  }}">Next sucker!</a>
+        </div>
+        {% end %}
+      </section>
+    </div>
   </body>
 </html>
