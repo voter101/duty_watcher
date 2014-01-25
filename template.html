@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ title }}</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script
+  </head>
+  <body> 
+    <section id="duties">
+      {% for item in items %}
+        {{ escape(str(items[item])) }}<br />
+      {% end %}
+    </section>
+  </body>
+</html>
