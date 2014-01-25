@@ -57,3 +57,8 @@ legend {
 
 #yui3-css-stamp.cssreset {
   display: none; }
+
+#wrapper {
+  font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 26px; }
