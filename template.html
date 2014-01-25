@@ -11,13 +11,25 @@
       <h1>Who cleans the house this week?</h1>
       <section id="duties">
         {% for item in items %}
-        <div class="duty">
+        <div class="duty {{ item }}">
           <span class="place">{{ item.title() }}</span> 
           <span class="name">{{ escape(str(items[item][0])) }}</span>
-          <a class="nextSucker" href="{{ '/nextSucker/' + item  }}">Next sucker!</a>
+          <a data-duty="{{ item }}" class="nextSucker" href="{{ '/nextSucker/' + item  }}">Next sucker!</a>
         </div>
         {% end %}
       </section>
     </div>
+    <script>
+      $('.nextSucker').click( function(event) {
+        event.preventDefault();
+        var duty = $(this).attr('data-duty');
+        $.ajax({
+          url: $(this).attr('href'),
+          context: document.body
+        }).done(function(msg) {
+          $('.' + duty + ' .name').html($.parseJSON(msg));
+        });
+      });
+    </script>
   </body>
 </html>
