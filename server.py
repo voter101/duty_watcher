@@ -4,7 +4,6 @@ import tornado.template
 import tornado.options
 import tornado.httpserver
 import tornado.locale
-import gettext
 import os
 
 from List import *
