@@ -3,6 +3,8 @@ import tornado.web
 import tornado.template
 import tornado.options
 import tornado.httpserver
+import tornado.locale
+import gettext
 import os
 
 from List import *
@@ -13,7 +15,7 @@ class MainHandler(tornado.web.RequestHandler):
     def get(self):
         dutyMap = getDutyMap()
         items = dutyMap
-        self.render('template.html', title='Who cleans the house this week', items=items)
+        self.render('template.html', title='Who cleans the house this week?', items=items)
     
 class NextSuckerHandler(tornado.web.RequestHandler):
     def get(self, duty):
@@ -36,6 +38,7 @@ def main():
     tornado.options.parse_command_line()
     http_server = tornado.httpserver.HTTPServer(Application())
     http_server.listen(tornado.options.options.port)
+    tornado.locale.load_translations('locale')
     tornado.ioloop.IOLoop.instance().start()
 
 if __name__ == "__main__":
