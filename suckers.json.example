@@ -1,0 +1,10 @@
+{
+  "bathroom": 
+    ["Person 2", "Person 3", "Person 1", "Person 4"], 
+  "kitchen": 
+    ["Person 4", "Person 1", "Person 3", "Person 2"], 
+  "toilet": 
+    ["Person 3", "Person 2", "Person 4", "Person 1"],
+  "anteroom": 
+    ["Person 3", "Person 2", "Person 4", "Person 1"]
+}
